@@ -17,15 +17,20 @@
 
         src = ./.;
 
+        mvnHash = "sha256-6Vax8cqsVueIUl1o8bc8SujLsjlxTfGiLlgGqqtl13c=";
+
         nativeBuildInputs = with pkgs; [ makeWrapper ];
+        propagatedBuildInputs = with pkgs; [
+          openjdk
+          openjfx
+        ];
 
         installPhase = ''
-          mkdir -p $out/bin $out/share/splitstreeCE
-          ls -l
-          install -Dm644 splitstreeCE/target/splitstreeCE.jar $out/share/splitstreeCE
+          mkdir -p $out/bin $out/share
+          install -Dm644 target/SplitsTreeCE-1.0.0-SNAPSHOT.jar $out/share/SplitsTreeCE.jar
 
           makeWrapper ${pkgs.jre}/bin/java $out/bin/splitstreeCE \
-            --add-flags " - jar $out/share/splitstreeCE/splitstreeCE.jar "
+            --add-flags "-jar $out/share/SplitsTreeCE.jar"
         '';
 
         meta = {
@@ -39,6 +44,7 @@
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
           openjdk
+          openjfx
           maven
         ];
       };

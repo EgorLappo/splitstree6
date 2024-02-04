@@ -41,9 +41,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.husonlab</groupId>
+            <groupId>com.github.husonlab</groupId>
             <artifactId>jloda2</artifactId>
-            <version>2.0.0-SNAPSHOT</version>
+            <version>cf303ecb7e8ec04b6ab61c110dbddf30d4f1c6d3</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -119,20 +119,21 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-->
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
+                        <index>true</index>
                         <manifest>
                             <mainClass>${main.class}</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
-            <-->
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
