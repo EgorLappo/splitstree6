@@ -17,7 +17,7 @@
 
         src = ./.;
 
-        mvnHash = "sha256-6Vax8cqsVueIUl1o8bc8SujLsjlxTfGiLlgGqqtl13c=";
+        mvnHash = "sha256-UH1gLE4Y6ff1zzYd6XqCpvHezSyG1BvylaJqZgUcg6o=";
 
         nativeBuildInputs = with pkgs; [ makeWrapper ];
         propagatedBuildInputs = with pkgs; [
